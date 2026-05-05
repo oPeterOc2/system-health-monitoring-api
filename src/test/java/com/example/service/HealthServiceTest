@@ -1,0 +1,17 @@
+package com.example.healthmonitoring.service;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class HealthServiceTest {
+
+    private final HealthService healthService = new HealthService();
+
+    @Test
+    void testSystemHealth() {
+        var result = healthService.getSystemHealth();
+        assertEquals("OK", result.status());
+        assertNotNull(result.timestamp());
+    }
+}

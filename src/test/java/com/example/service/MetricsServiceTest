@@ -1,0 +1,17 @@
+package com.example.healthmonitoring.service;
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class MetricsServiceTest {
+
+    private final MetricsService metricsService = new MetricsService();
+
+    @Test
+    void testMetrics() {
+        var result = metricsService.getMetrics();
+        assertNotNull(result);
+        assertTrue(result.uptime() >= 0);
+    }
+}
