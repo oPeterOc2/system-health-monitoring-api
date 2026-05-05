@@ -180,6 +180,37 @@ src/
             └── application.properties
 </pre>
 
+## Why Not Use Spring Boot Actuator?
+
+This project intentionally does not use Spring Boot Actuator for `/health` and `/metrics`.  
+Instead, all endpoints are implemented manually to demonstrate backend engineering skills.
+
+### Advantages of Custom Implementation
+- **Full control of response structure**  
+  Allows tailoring the JSON format to match real production requirements.
+
+- **Demonstrates engineering fundamentals**  
+  Shows understanding of JVM metrics, GC, CPU load, thread usage, and system monitoring.
+
+- **No hidden abstractions**  
+  Everything is explicit—useful for interviews and code reviews.
+
+- **Lightweight**  
+  Avoids exposing unnecessary Actuator endpoints in small services.
+
+### Disadvantages Compared to Actuator
+- **More code to maintain**  
+  Actuator provides many metrics out of the box; custom code requires updates.
+
+- **Missing advanced metrics**  
+  Actuator includes thread dumps, heap dumps, environment info, etc.
+
+- **Less integration with monitoring tools**  
+  Actuator integrates natively with Prometheus, Micrometer, and Grafana.
+
+- **Reinventing the wheel for production**  
+  In real systems, Actuator is usually preferred for completeness and reliability.
+
 ## Future Improvements
 
 Planned enhancements to further improve the project:
